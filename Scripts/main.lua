@@ -1,7 +1,7 @@
 --[[
     Author: Igromanru
     Date: 16.10.2024
-    Mod Name: Instant Fishing
+    Mod Name: Infinite Leyak Containment
 ]]
 
 ------------------------------
