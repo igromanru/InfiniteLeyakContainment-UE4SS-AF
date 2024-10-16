@@ -1,0 +1,41 @@
+[font=Verdana][size=4][b]Description[/b][/size][/font]
+The mod maxes out Leyak's Containment at the beginning of each day.
+It starts working only after you have caught Leyak and only for the Containment she is in.
+
+[font=Verdana][size=4][b]Requirements[/b][/size][/font]
+[size=3][url=https://www.nexusmods.com/abioticfactor/mods/35]UE4SS for Abiotic Factor[/url][/size]
+
+[font=Verdana][size=4][b]Manual Installation[/b][/size][/font]
+[size=1]As for now Vortex doesn't support the game, so you have to install the mod manually.[/size]
+1. Follow the instruction on the [url=https://www.nexusmods.com/abioticfactor/mods/35]UE4SS for Abiotic Factor[/url] page to download and install latest UE4SS from there.
+2. After use the [b]Manual Download[/b] button in [i]Files[/i] tab of this mod to download the mod as a zip file.
+4. Unzip/extract the content of mod's zip ([b]InfiniteLeyakContainment[/b] folder) into the directory: [i](game root directory)\AbioticFactor\Binaries\Win64\ue4ss\Mods\[/i]
+[size=2]Make sure you don't create a new folder while extracting! If you do just move the content to the destination after.[/size]
+[size=2]Whole mod path should be like this: [i](game root directory)\AbioticFactor\Binaries\Win64\ue4ss\Mods\InfiniteLeyakContainment\[/i][/size]
+[size=2]Steam example: [i]C:\Program Files (x86)\Steam\steamapps\common\AbioticFactor\Binaries\Win64\ue4ss\Mods\InfiniteLeyakContainment\[/i][/size]
+5. Verify that you have installed the mod correctly.
+The mod directory should contain a [b]Scripts[/b] folder and an [b]enabled.txt[/b] file.
+[size=2][i](game root directory)\AbioticFactor\Binaries\Win64\ue4ss\Mods\InfiniteLeyakContainment\Scripts\[/i]
+[i](game root directory)\AbioticFactor\Binaries\Win64\ue4ss\Mods\InfiniteLeyakContainment\enabled.txt[/i][/size]
+
+[font=Verdana][size=4][b]How to use[/b][/size][/font]
+1. Build the Leyak Containment device
+2. Supply the device with some Greyeb
+3. Use X-Ray on Leyak
+4. Done, the mod will refill the Containment at the beginning of each day
+
+[font=Verdana][size=4][b]Multiplayer[/b][/size][/font]
+The mod works only if you're the host of the game or in Singleplayer
+
+[font=Verdana][size=4][b]My AF Mods[/b][/size][/font]
+Check out my other Abiotic Factor mods.
+[list]
+[*][url=https://www.nexusmods.com/abioticfactor/mods/28]Cheat Console Commands[/url]
+[*][url=https://www.nexusmods.com/abioticfactor/mods/33]Stack Manager[/url]
+[*][url=https://www.nexusmods.com/abioticfactor/mods/23]Instant Fishing[/url]
+[*][url=https://www.nexusmods.com/abioticfactor/mods/20]Duplicate Items[/url]
+[*][url=https://www.nexusmods.com/abioticfactor/mods/22]Unlimited Power (Gear - Held Item - Batteries)[/url]
+[*][url=https://www.nexusmods.com/abioticfactor/mods/31]Jager Corpse Remover[/url]
+[/list]
+
+[b][url=https://github.com/igromanru/InstantFishing-UE4SS-AF]GitHub Page[/url][/b]
