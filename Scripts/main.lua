@@ -8,7 +8,7 @@
 -- Don't change code below --
 ------------------------------
 ModName = "InfiniteLeyakContainment"
-ModVersion = "1.0.0"
+ModVersion = "1.0.1"
 DebugMode = false
 IsModEnabled = true
 
@@ -16,7 +16,7 @@ local function ModInfoAsPrefix()
     return "["..ModName.." v"..ModVersion.."] "
 end
 
-print(ModInfoAsPrefix().."Starting mod initialization")
+print(ModInfoAsPrefix().."Starting mod initialization\n")
 
 local function IsContainmentCurrentlyActive(Context)
     local leyakContainment = Context:get() ---@type ADeployed_LeyakContainment_C
@@ -47,4 +47,4 @@ ClientRestartPreId, ClientRestartPostId = RegisterHook("/Script/Engine.PlayerCon
     InitModHooks()
 end)
 
-print(ModInfoAsPrefix().."Mod loaded successfully")
+print(ModInfoAsPrefix().."Mod loaded successfully\n")
