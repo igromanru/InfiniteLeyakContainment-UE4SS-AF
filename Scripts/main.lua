@@ -9,7 +9,7 @@
 ------------------------------
 ModName = "InfiniteLeyakContainment"
 ModVersion = "1.0.1"
-DebugMode = false
+DebugMode = true
 IsModEnabled = true
 
 local function ModInfoAsPrefix()
@@ -22,7 +22,14 @@ local function IsContainmentCurrentlyActive(Context)
     local leyakContainment = Context:get() ---@type ADeployed_LeyakContainment_C
 
     if IsModEnabled and leyakContainment.ContainsLeyak then
+        if DebugMode then
+            print(ModInfoAsPrefix().."[IsContainmentCurrentlyActive]:")
+            print(ModInfoAsPrefix().."Stability Level: "..leyakContainment['Stability Level'])
+        end
         leyakContainment:ServerUpdateStabilityLevel(leyakContainment.MaxStability)
+        if DebugMode then
+            print(ModInfoAsPrefix().."Stability Level after: "..leyakContainment['Stability Level'])
+        end
     end
 end
 
@@ -38,13 +45,14 @@ local function InitModHooks()
     end
 end
 
+InitModHooks()
 -- For hot reload
-if DebugMode then
-    InitModHooks()
-end
+-- if DebugMode then
+--     InitModHooks()
+-- end
 
-ClientRestartPreId, ClientRestartPostId = RegisterHook("/Script/Engine.PlayerController:ClientRestart", function(Context, NewPawn)
-    InitModHooks()
-end)
+-- ClientRestartPreId, ClientRestartPostId = RegisterHook("/Script/Engine.PlayerController:ClientRestart", function(Context, NewPawn)
+--     InitModHooks()
+-- end)
 
 print(ModInfoAsPrefix().."Mod loaded successfully\n")
