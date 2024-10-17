@@ -9,7 +9,7 @@
 ------------------------------
 ModName = "InfiniteLeyakContainment"
 ModVersion = "1.0.1"
-DebugMode = true
+DebugMode = false
 IsModEnabled = true
 
 local function ModInfoAsPrefix()
