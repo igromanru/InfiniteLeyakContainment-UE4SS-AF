@@ -26,6 +26,8 @@ local function IsContainmentCurrentlyActive(Context)
             print(ModInfoAsPrefix().."[IsContainmentCurrentlyActive]:\n")
             print(ModInfoAsPrefix().."Stability Level: "..leyakContainment['Stability Level']..'\n')
         end
+        -- leyakContainment['Stability Level'] = leyakContainment.MaxStability
+        -- leyakContainment['OnRep_Stability Level']()
         leyakContainment:ServerUpdateStabilityLevel(leyakContainment.MaxStability - leyakContainment['Stability Level'])
         if DebugMode then
             print(ModInfoAsPrefix().."Stability Level after: "..leyakContainment['Stability Level']..'\n')
