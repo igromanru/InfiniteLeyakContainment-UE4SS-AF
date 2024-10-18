@@ -8,7 +8,7 @@
 -- Don't change code below --
 ------------------------------
 ModName = "InfiniteLeyakContainment"
-ModVersion = "1.0.2"
+ModVersion = "1.0.3"
 DebugMode = false
 IsModEnabled = true
 
@@ -39,6 +39,8 @@ local function IsContainmentCurrentlyActive(Context)
             print(ModInfoAsPrefix().."New Stability Level: "..leyakContainment['Stability Level']..'\n')
         end
     end
+
+    return leyakContainment.ContainsLeyak == true
 end
 
 RegisterHook("/Game/Blueprints/DeployedObjects/Furniture/Deployed_LeyakContainment.Deployed_LeyakContainment_C:IsContainmentCurrentlyActive", IsContainmentCurrentlyActive)
