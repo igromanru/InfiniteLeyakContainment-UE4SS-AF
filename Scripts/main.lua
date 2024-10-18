@@ -8,7 +8,7 @@
 -- Don't change code below --
 ------------------------------
 ModName = "InfiniteLeyakContainment"
-ModVersion = "1.0.1"
+ModVersion = "1.0.2"
 DebugMode = true
 IsModEnabled = true
 
@@ -26,7 +26,7 @@ local function IsContainmentCurrentlyActive(Context)
             print(ModInfoAsPrefix().."[IsContainmentCurrentlyActive]:")
             print(ModInfoAsPrefix().."Stability Level: "..leyakContainment['Stability Level'])
         end
-        leyakContainment:ServerUpdateStabilityLevel(leyakContainment.MaxStability)
+        leyakContainment:ServerUpdateStabilityLevel(leyakContainment.MaxStability - leyakContainment['Stability Level'])
         if DebugMode then
             print(ModInfoAsPrefix().."Stability Level after: "..leyakContainment['Stability Level'])
         end
