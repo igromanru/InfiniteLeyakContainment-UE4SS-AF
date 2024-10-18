@@ -9,7 +9,7 @@
 ------------------------------
 ModName = "InfiniteLeyakContainment"
 ModVersion = "1.0.2"
-DebugMode = true
+DebugMode = false
 IsModEnabled = true
 
 local function ModInfoAsPrefix()
@@ -22,39 +22,25 @@ local function IsContainmentCurrentlyActive(Context)
     local leyakContainment = Context:get() ---@type ADeployed_LeyakContainment_C
 
     if IsModEnabled and leyakContainment.ContainsLeyak then
+        local stability = leyakContainment['Stability Level']
+        local maxStability = leyakContainment.MaxStability
+        local difference =  maxStability - stability
         if DebugMode then
             print(ModInfoAsPrefix().."[IsContainmentCurrentlyActive]:\n")
-            print(ModInfoAsPrefix().."Stability Level: "..leyakContainment['Stability Level']..'\n')
+            print(ModInfoAsPrefix().."Stability Level: "..stability..'\n')
+            print(ModInfoAsPrefix().."MaxStability: "..maxStability..'\n')
         end
-        -- leyakContainment['Stability Level'] = leyakContainment.MaxStability
-        -- leyakContainment['OnRep_Stability Level']()
-        leyakContainment:ServerUpdateStabilityLevel(leyakContainment.MaxStability - leyakContainment['Stability Level'])
+        if difference > 0 then
+            -- leyakContainment['Stability Level'] = leyakContainment.MaxStability
+            -- leyakContainment['OnRep_Stability Level']()
+            leyakContainment:ServerUpdateStabilityLevel(difference)
+        end
         if DebugMode then
-            print(ModInfoAsPrefix().."Stability Level after: "..leyakContainment['Stability Level']..'\n')
+            print(ModInfoAsPrefix().."New Stability Level: "..leyakContainment['Stability Level']..'\n')
         end
     end
 end
 
--- local ClientRestartPreId, ClientRestartPostId = nil, nil
-local HooksInitialized = false
-local function InitModHooks()
-    if not HooksInitialized then
-        RegisterHook("/Game/Blueprints/DeployedObjects/Furniture/Deployed_LeyakContainment.Deployed_LeyakContainment_C:IsContainmentCurrentlyActive", IsContainmentCurrentlyActive)
-        HooksInitialized = true
-    end
-    -- if ClientRestartPreId and ClientRestartPostId then
-    --     UnregisterHook("/Script/Engine.PlayerController:ClientRestart", ClientRestartPreId, ClientRestartPostId)
-    -- end
-end
-
-InitModHooks()
--- For hot reload
--- if DebugMode then
---     InitModHooks()
--- end
-
--- ClientRestartPreId, ClientRestartPostId = RegisterHook("/Script/Engine.PlayerController:ClientRestart", function(Context, NewPawn)
---     InitModHooks()
--- end)
+RegisterHook("/Game/Blueprints/DeployedObjects/Furniture/Deployed_LeyakContainment.Deployed_LeyakContainment_C:IsContainmentCurrentlyActive", IsContainmentCurrentlyActive)
 
 print(ModInfoAsPrefix().."Mod loaded successfully\n")
