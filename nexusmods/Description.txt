@@ -25,7 +25,7 @@ The mod directory should contain a [b]Scripts[/b] folder and an [b]enabled.txt[/
 4. Done, the mod will refill the Containment at the beginning of each day
 
 [font=Verdana][size=4][b]Multiplayer[/b][/size][/font]
-The mod works only if you're the host of the game or in Singleplayer
+The mod works only if you're the host of the game or if you install it with UE4SS on the Dedicated Server.
 
 [font=Verdana][size=4][b]My AF Mods[/b][/size][/font]
 Check out my other Abiotic Factor mods.
