@@ -36,7 +36,7 @@ local function CheckAndFixActiveLeyakContainmentID(LeyakContainment)
     end
 end
 
-local function IsContainmentCurrentlyActive(Context)
+local function NewDayUpdate(Context)
     local leyakContainment = Context:get() ---@type ADeployed_LeyakContainment_C
 
     CheckAndFixActiveLeyakContainmentID(leyakContainment)
@@ -59,10 +59,8 @@ local function IsContainmentCurrentlyActive(Context)
             print(ModInfoAsPrefix().."New Stability Level: "..leyakContainment['Stability Level']..'\n')
         end
     end
-
-    return leyakContainment.ContainsLeyak == true
 end
 
-RegisterHook("/Game/Blueprints/DeployedObjects/Furniture/Deployed_LeyakContainment.Deployed_LeyakContainment_C:IsContainmentCurrentlyActive", IsContainmentCurrentlyActive)
+RegisterHook("/Game/Blueprints/DeployedObjects/Furniture/Deployed_LeyakContainment.Deployed_LeyakContainment_C:NewDayUpdate", NewDayUpdate)
 
 print(ModInfoAsPrefix().."Mod loaded successfully\n")
