@@ -8,7 +8,7 @@
 -- Don't change code below --
 ------------------------------
 ModName = "InfiniteLeyakContainment"
-ModVersion = "1.1.0"
+ModVersion = "1.1.1"
 DebugMode = true
 IsModEnabled = true
 
@@ -61,6 +61,9 @@ local function NewDayUpdate(Context)
     end
 end
 
-RegisterHook("/Game/Blueprints/DeployedObjects/Furniture/Deployed_LeyakContainment.Deployed_LeyakContainment_C:NewDayUpdate", NewDayUpdate)
+ExecuteInGameThread(function()
+    LoadAsset("/Game/Blueprints/DeployedObjects/Furniture/Deployed_LeyakContainment.Deployed_LeyakContainment_C")
+    RegisterHook("/Game/Blueprints/DeployedObjects/Furniture/Deployed_LeyakContainment.Deployed_LeyakContainment_C:NewDayUpdate", NewDayUpdate)
+end)
 
 print(ModInfoAsPrefix().."Mod loaded successfully\n")
