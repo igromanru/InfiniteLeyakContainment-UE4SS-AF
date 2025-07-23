@@ -18,6 +18,8 @@ local function ModInfoAsPrefix()
     return "["..ModName.." v"..ModVersion.."] "
 end
 
+local FoodGreyeb = UEHelpers.FindFName("food_greyeb")
+
 print(ModInfoAsPrefix().."Starting mod initialization\n")
 
 ---@param LeyakContainment ADeployed_LeyakContainment_C
@@ -53,7 +55,7 @@ local function NewDayUpdate(Context)
         if difference > 0 then
             -- leyakContainment['Stability Level'] = leyakContainment.MaxStability
             -- leyakContainment['OnRep_Stability Level']()
-            leyakContainment:ServerUpdateStabilityLevel(difference)
+            leyakContainment:ServerUpdateStabilityLevel(difference, FoodGreyeb)
         end
         if DebugMode then
             print(ModInfoAsPrefix().."New Stability Level: "..leyakContainment['Stability Level']..'\n')
