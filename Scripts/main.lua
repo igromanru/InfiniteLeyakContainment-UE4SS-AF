@@ -19,6 +19,7 @@ local function ModInfoAsPrefix()
 end
 
 local FoodGreyeb = UEHelpers.FindFName("food_greyeb")
+local LeyakRowName = UEHelpers.FindFName("Leyak")
 
 print(ModInfoAsPrefix().."Starting mod initialization\n")
 
@@ -30,10 +31,10 @@ local function CheckAndFixActiveLeyakContainmentID(LeyakContainment)
     if gameState:IsValid() and gameState.ActiveLeyakContainmentID then
         local leyakContainmentID = LeyakContainment.SpawnedAssetID:ToString()
         local activeLeyakContainmentID = gameState.ActiveLeyakContainmentID:ToString()
-        if LeyakContainment.ContainsLeyak == true and activeLeyakContainmentID == "" then
+        if LeyakContainment.ContainsLeyak:GetComparisonIndex() > 0 and activeLeyakContainmentID == "" then
             gameState['Set Leyak Containment ID'](leyakContainmentID)
-        elseif activeLeyakContainmentID == leyakContainmentID and not LeyakContainment.ContainsLeyak then
-            LeyakContainment:TrapLeyak(0.5)
+        elseif activeLeyakContainmentID == leyakContainmentID and LeyakContainment.ContainsLeyak:GetComparisonIndex() == 0 then
+            LeyakContainment:TrapLeyak(0.5, LeyakRowName)
         end
     end
 end
@@ -42,7 +43,7 @@ local function NewDayUpdate(Context)
     local leyakContainment = Context:get() ---@type ADeployed_LeyakContainment_C
 
     CheckAndFixActiveLeyakContainmentID(leyakContainment)
-    if IsModEnabled and leyakContainment.ContainsLeyak then
+    if IsModEnabled and leyakContainment.ContainsLeyak:GetComparisonIndex() > 0 then
         local stability = leyakContainment['Stability Level']
         local maxStability = leyakContainment.MaxStability
         local difference =  maxStability - stability
