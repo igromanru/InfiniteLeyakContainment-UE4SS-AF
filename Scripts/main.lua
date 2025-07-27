@@ -12,14 +12,13 @@ ModVersion = "1.2.0"
 DebugMode = true
 IsModEnabled = true
 
-local UEHelpers = require("UEHelpers")
+-- local UEHelpers = require("UEHelpers")
+-- local FoodGreyeb = UEHelpers.FindFName("food_greyeb")
+-- local LeyakRowName = UEHelpers.FindFName("Leyak")
 
 local function ModInfoAsPrefix()
     return "["..ModName.." v"..ModVersion.."] "
 end
-
--- local FoodGreyeb = UEHelpers.FindFName("food_greyeb")
--- local LeyakRowName = UEHelpers.FindFName("Leyak")
 
 print(ModInfoAsPrefix().."Starting mod initialization\n")
 
