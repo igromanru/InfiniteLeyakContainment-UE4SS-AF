@@ -20,8 +20,8 @@ The mod directory should contain a [b]Scripts[/b] folder and an [b]enabled.txt[/
 
 [font=Verdana][size=4][b]How to use[/b][/size][/font]
 1. Build the Leyak Containment device
-2. Supply the device with some Greyeb
-3. Use X-Ray on Leyak
+2. Supply the device with some food
+3. Catch a Leyak (No spoilers, find out for you self how)
 4. Done, the mod will refill the Containment at the beginning of each day
 
 [font=Verdana][size=4][b]Multiplayer[/b][/size][/font]
@@ -35,7 +35,11 @@ Check out my other Abiotic Factor mods.
 [*][url=https://www.nexusmods.com/abioticfactor/mods/23]Instant Fishing[/url]
 [*][url=https://www.nexusmods.com/abioticfactor/mods/20]Duplicate Items[/url]
 [*][url=https://www.nexusmods.com/abioticfactor/mods/22]Unlimited Power (Gear - Held Item - Batteries)[/url]
-[*][url=https://www.nexusmods.com/abioticfactor/mods/31]Jager Corpse Remover[/url]
+[*][url=https://www.nexusmods.com/abioticfactor/mods/42]Customization Unlocker[/url]
 [/list]
+[b][url=https://github.com/igromanru/InfiniteLeyakContainment-UE4SS-AF]GitHub Page[/url][/b]
 
-[b][url=https://github.com/igromanru/InstantFishing-UE4SS-AF]GitHub Page[/url][/b]
+[font=Arial][size=4]Highest form of appreciation[/size][/font]
+[size=2]If you like my work and feel generous, you can support me.[/size]
+[url=https://ko-fi.com/igromanru][img]https://i.imgur.com/rGcPxK8.png[/img][/url]
+[url=https://buymeacoffee.com/igromanru][img]https://i.imgur.com/JG0mNZg.png[/img][/url]
