@@ -8,7 +8,7 @@
 -- Don't change code below --
 ------------------------------
 ModName = "InfiniteLeyakContainment"
-ModVersion = "1.2.0"
+ModVersion = "1.2.1"
 DebugMode = true
 IsModEnabled = true
 
@@ -17,10 +17,10 @@ IsModEnabled = true
 -- local LeyakRowName = UEHelpers.FindFName("Leyak")
 
 local function ModInfoAsPrefix()
-    return "["..ModName.." v"..ModVersion.."] "
+    return "[" .. ModName .. " v" .. ModVersion .. "] "
 end
 
-print(ModInfoAsPrefix().."Starting mod initialization\n")
+print(ModInfoAsPrefix() .. "Starting mod initialization\n")
 
 -- ---@param LeyakContainment ADeployed_LeyakContainment_C
 -- local function CheckAndFixActiveLeyakContainmentID(LeyakContainment)
@@ -45,7 +45,7 @@ local function NewDayUpdate(Context)
     if IsModEnabled and leyakContainment.ContainsLeyak:GetComparisonIndex() > 0 then
         local stability = leyakContainment['Stability Level']
         local maxStability = leyakContainment.MaxStability
-        local difference =  maxStability - stability
+        local difference = maxStability - stability
         -- if DebugMode then
         --     print(ModInfoAsPrefix().."[IsContainmentCurrentlyActive]:\n")
         --     print(ModInfoAsPrefix().."Stability Level: "..stability..'\n')
@@ -59,16 +59,18 @@ local function NewDayUpdate(Context)
             leyakContainment:ServerUpdateStabilityLevel(difference, leyakContainment.CurrentStabilisingFoodRowName)
         end
         if DebugMode then
-            print(ModInfoAsPrefix().."New Stability Level: "..leyakContainment['Stability Level']..'\n')
+            print(ModInfoAsPrefix() .. "New Stability Level: " .. leyakContainment['Stability Level'] .. '\n')
         end
     end
 end
 
-ExecuteInGameThread(function()
-    print(ModInfoAsPrefix().."Initializing hooks\n")
-    LoadAsset("/Game/Blueprints/DeployedObjects/Furniture/Deployed_LeyakContainment.Deployed_LeyakContainment_C")
-    RegisterHook("/Game/Blueprints/DeployedObjects/Furniture/Deployed_LeyakContainment.Deployed_LeyakContainment_C:NewDayUpdate", NewDayUpdate)
-    print(ModInfoAsPrefix().."Hooks initialized\n")
+ExecuteWithDelay(10000, function()
+    ExecuteInGameThread(function()
+        print(ModInfoAsPrefix() .. "Initializing hooks\n")
+        LoadAsset("/Game/Blueprints/DeployedObjects/Furniture/Deployed_LeyakContainment.Deployed_LeyakContainment_C")
+        RegisterHook("/Game/Blueprints/DeployedObjects/Furniture/Deployed_LeyakContainment.Deployed_LeyakContainment_C:NewDayUpdate", NewDayUpdate)
+        print(ModInfoAsPrefix() .. "Hooks initialized\n")
+    end)
 end)
 
-print(ModInfoAsPrefix().."Mod loaded successfully\n")
+print(ModInfoAsPrefix() .. "Mod loaded successfully\n")
